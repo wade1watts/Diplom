@@ -1,0 +1,45 @@
+@import '~leaflet/dist/leaflet.css';
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* #map { height: 180px; }
+.leaflet-container {
+    height: 100vh;
+} */
+.leaflet-container {
+    width: 100%;
+    height: 100vh;
+  }
+
+.navbar{
+    background-color: gray;
+    width: 100%;
+    height: 45px;
+    left: 0%;
+    right: 0%;
+    z-index: 3000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar{
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 3000; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: grey; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+.filtres{
+    text-align:center;
+}

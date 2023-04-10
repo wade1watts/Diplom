@@ -1,0 +1,21 @@
+.filtres{
+    color: white;
+    text-align: center;
+}
+
+.SideButton{
+    color: #333;
+    background-color: #f1f1f1;
+    text-align: center;
+    left: 0px;
+    top: 5px;
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    display: block;
+    margin: auto;
+}
+.SideButton:hover{
+    background-color: #583eeea1;
+}
