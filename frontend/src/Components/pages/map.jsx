@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"; 
-import Sidebar from "../sidebar";
+// import Sidebar from "../sidebar";
 import { MapContainer, Marker, Popup, TileLayer, ZoomControl} from 'react-leaflet';
 import L from "leaflet";
 import '../Map.css'
@@ -16,9 +16,9 @@ const markerIcon = new L.Icon({
 function Map() {
 
     const [info, setinfo] = useState([])
-    useEffect(()=>{
-        parsCoords()
-    }, [])
+
+    useEffect(()=>{parsCoords()}, [])
+
     async function parsCoords(id){
         const response = await PostService.getAll();
         setinfo(response.data)
@@ -26,7 +26,7 @@ function Map() {
 
             return(
                 <div>
-                    <Sidebar/>
+                    {/* <Sidebar/> */}
                 <MapContainer center={[55.74,  37.61]} zoom={8} zoomControl={false} >
                 
                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
@@ -36,10 +36,9 @@ function Map() {
                         
                             <Marker position={[pars.latitude, pars.longitude]} icon={markerIcon}>
                                 <Popup>
-                                {[pars.city]} <br /> {[pars.latitude]} <br /> {[pars.longitude]}
+                                {[pars.city]} <br/> {[pars.latitude]} <br/> {[pars.longitude]} <br/> <button onClick={alert}>Изменить</button>
                                 </Popup>
-                            </Marker>
-                        
+                            </Marker>                        
                     )}
                     </MarkerClusterGroup>
                 </MapContainer>
