@@ -10,7 +10,8 @@ class CoordinatesView(APIView):
         output = [
             {
                 'longitude': output.longitude,
-                'latitude': output.latitude
+                'latitude': output.latitude,
+                'city': output.city
             } for output in Coordinates.objects.all()
         ]
         return Response(output)

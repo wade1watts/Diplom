@@ -1,4 +1,5 @@
 @import '~leaflet/dist/leaflet.css';
+@import '~@changey/react-leaflet-markercluster/dist/styles.min.css';
 
 html, body {
     height: 100%;
@@ -6,7 +7,7 @@ html, body {
     padding: 0;
     overflow: hidden;
 }
-
+.markercluster-map { height: 90vh; }
 /* #map { height: 180px; }
 .leaflet-container {
     height: 100vh;
@@ -23,9 +24,12 @@ html, body {
     left: 0%;
     right: 0%;
     z-index: 3000;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+
 }
 
 .sidebar{
@@ -42,4 +46,7 @@ html, body {
 
 .filtres{
     text-align:center;
+}
+.leaflet-top .leaflet-control {
+    margin-top: 100px;
 }
