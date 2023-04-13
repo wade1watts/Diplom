@@ -11,7 +11,8 @@ class CoordinatesView(APIView):
             {
                 'longitude': output.longitude,
                 'latitude': output.latitude,
-                'city': output.city
+                'city': output.city,
+                'id': output.id
             } for output in Coordinates.objects.all()
         ]
         return Response(output)

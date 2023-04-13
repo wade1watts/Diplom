@@ -34,7 +34,7 @@ function Map() {
 
                     {/* <Sidebar/> */}
                 <MapContainer center={[55.74,  37.61]} zoom={8} zoomControl={false} >
-                <Modal active={modalActive} setActive={setModalActive}><h1>sdfghjk</h1></Modal>
+
                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
                     <ZoomControl position='bottomright' />
                     <MarkerClusterGroup>
@@ -45,7 +45,7 @@ function Map() {
                                  
                                 <Popup>
                                 {[pars.city]} <br/> {[pars.latitude]} <br/> {[pars.longitude]} <br/> 
-                                <button onClick={() => setModalActive(true)}>Открыть</button>
+                                <button onClick={() => setModalActive([true, pars.latitude, pars.longitude, pars.id])}>Открыть</button>
                                 </Popup>
                                  
                             </Marker>                                                 
@@ -54,9 +54,7 @@ function Map() {
                     </MarkerClusterGroup>
                     
                 </MapContainer>
-                <Modal active={modalActive} setActive={setModalActive}><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                    Velit voluptatum sunt et quibusdam molestias qui, quas cumque quo, laboriosam ipsum officiis quisquam porro fugiat,
-                     modi nulla ad veniam minima accusantium.</p></Modal>
+                <Modal active={modalActive} setActive={setModalActive}/>
                 </div>
             )
 }
