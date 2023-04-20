@@ -20,5 +20,7 @@ from backend_api.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', CoordinatesView.as_view(), name='oh shit')
+    path('', CoordinatesView.as_view(), ),
+    path('api/v1/marker/<int:pk>/', MarkerById.as_view(), ),
+    path('api/v1/update/marker/<int:pk>/', MarkerAPIUpdate.as_view(), ),
 ]

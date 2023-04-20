@@ -6,6 +6,7 @@ import '../Map.css'
 import PostService from "../../API/GETIinfo";
 import MarkerClusterGroup from "@changey/react-leaflet-markercluster";
 import Modal from "../Modal/Modal";
+import axios from "axios";
 
 const markerIcon = new L.Icon({
     iconUrl: require("./images/pin.png"),
@@ -17,9 +18,8 @@ const markerIcon = new L.Icon({
 function Map() {
 
     const [modalActive, setModalActive] = useState(false)
-
     const [info, setinfo] = useState([])
-
+    const [id, setId] = useState([])
     useEffect(()=>{parsCoords()}, [])
 
     async function parsCoords(id){
@@ -27,6 +27,11 @@ function Map() {
         setinfo(response.data)
     }
 
+    async function fetchById(id){
+        const response = await PostService.getById(id);
+        setId(response.data)
+        console.log(response.data)
+    }
             return(
                 <div>
 
@@ -46,6 +51,7 @@ function Map() {
                                 <Popup>
                                 {[pars.city]} <br/> {[pars.latitude]} <br/> {[pars.longitude]} <br/> 
                                 <button onClick={() => setModalActive([true, pars.latitude, pars.longitude, pars.id])}>Открыть</button>
+                                <button onClick={()=> fetchById(pars.id)}>GET COORDS</button>
                                 </Popup>
                                  
                             </Marker>                                                 
@@ -60,5 +66,3 @@ function Map() {
 }
 
 export default Map;
-
-// Андрей Воробьев
