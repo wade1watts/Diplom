@@ -7,6 +7,7 @@ import PostService from "../../API/GETIinfo";
 import MarkerClusterGroup from "@changey/react-leaflet-markercluster";
 import Modal from "../Modal/Modal";
 import axios from "axios";
+import AddDataForm from "../InputForm";
 
 const markerIcon = new L.Icon({
     iconUrl: require("./images/pin.png"),
@@ -52,6 +53,7 @@ function Map() {
                                 {[pars.city]} <br/> {[pars.latitude]} <br/> {[pars.longitude]} <br/> 
                                 <button onClick={() => setModalActive([true, pars.latitude, pars.longitude, pars.id])}>Открыть</button>
                                 <button onClick={()=> fetchById(pars.id)}>GET COORDS</button>
+                                <div><AddDataForm/></div>
                                 </Popup>
                                  
                             </Marker>                                                 
