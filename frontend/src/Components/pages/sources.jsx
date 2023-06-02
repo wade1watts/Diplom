@@ -3,40 +3,24 @@ import axios from 'axios';
 
 
 
-class Source extends React.Component {
 
-    state = { details: [],  markers: []}
+import SourceButton from "../../UI/Buttons/SourceButton"; 
+import ImageUploader from "../UploadIMG";
 
-    componentDidMount(){
-      let data;
-      axios.get('http://localhost:8000')
-      .then(res => {
-        data = res.data;
-        this.setState({
-          details: data
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      })
-      
-    }
 
-      render() {
-            return(
-                <div>
-                    <header>Данные из Django</header>
-                    <hr></hr>
-                    {this.state.details.map((output, id) => (
-                    <div key={id}>
-                    <div>
-                        <h2>{output.longitude}</h2>
-                         <p>{output.channel}</p>
-                    </div>
-                </div>
-                    ))}
-                </div>
-            )
-    }
-}
-export default Source;
+const App = () => {
+  return (
+    
+    <div className="container" style={{ marginBottom: '150px' }}>
+       <div>
+      <h1>Загрузка изображения</h1>
+      <ImageUploader />
+    </div>
+    <div className="button-container">
+      <SourceButton/>
+    </div>
+  </div>
+  );
+};
+
+export default App;

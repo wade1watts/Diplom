@@ -4,4 +4,4 @@ from .models import Coordinates
 class CoordinatesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Coordinates
-        fields = ['longitude', 'latitude', 'city', 'id']
+        fields = ['longitude', 'latitude', 'city', 'id', 'mil_image_url']

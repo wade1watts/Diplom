@@ -6,8 +6,7 @@ import '../Map.css'
 import PostService from "../../API/GETIinfo";
 import MarkerClusterGroup from "@changey/react-leaflet-markercluster";
 import Modal from "../Modal/Modal";
-import axios from "axios";
-import AddDataForm from "../InputForm";
+
 
 const markerIcon = new L.Icon({
     iconUrl: require("./images/pin.png"),
@@ -25,6 +24,7 @@ function Map() {
 
     async function parsCoords(id){
         const response = await PostService.getAll();
+        console.log(response.data)
         setinfo(response.data)
     }
 
@@ -50,10 +50,14 @@ function Map() {
                             <Marker position={[pars.latitude, pars.longitude]} icon={markerIcon}>
                                  
                                 <Popup>
-                                {[pars.city]} <br/> {[pars.latitude]} <br/> {[pars.longitude]} <br/> 
-                                <button onClick={() => setModalActive([true, pars.latitude, pars.longitude, pars.id])}>Открыть</button>
-                                <button onClick={()=> fetchById(pars.id)}>GET COORDS</button>
-                                <div><AddDataForm/></div>
+                                <b>Населенный пункт: {[pars.city]}</b><br/> <b>Широта: {[pars.latitude]}</b><br/> <b>Долгота: {[pars.longitude]}</b> <br/> 
+                                <div>
+                                {pars.mil_image_url && <img className="mil_img" src={pars.mil_image_url}  alt="Изображение" />}
+                                </div>
+                                
+                                {/* <button onClick={() => setModalActive([true, pars.latitude, pars.longitude, pars.id])}>Открыть</button>
+                                <button onClick={()=> fetchById(pars.id)}>GET COORDS</button> */}
+                                {/* <div><AddDataForm/></div> */}
                                 </Popup>
                                  
                             </Marker>                                                 

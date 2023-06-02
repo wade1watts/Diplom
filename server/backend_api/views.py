@@ -13,7 +13,8 @@ class CoordinatesView(APIView):
                 'longitude': output.longitude,
                 'latitude': output.latitude,
                 'city': output.city,
-                'id': output.id
+                'id': output.id,
+                'mil_image_url': output.mil_image_url
             } for output in Coordinates.objects.all()
         ]
         return Response(output)

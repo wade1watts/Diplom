@@ -50,3 +50,8 @@ html, body {
 .leaflet-top .leaflet-control {
     margin-top: 100px;
 }
+
+.mil_img{
+    height: 200px;
+    width: 300px;
+}
