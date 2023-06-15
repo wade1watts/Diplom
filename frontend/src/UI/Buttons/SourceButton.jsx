@@ -8,8 +8,8 @@ const Button = () => {
   return (
     <div>
       <button className="big-button" onClick={() => handleButtonClick('https://lenta.ru/')}>lenta.ru</button>
-      <button className="big-button" onClick={() => handleButtonClick('https://www.example1.com')}>Button 2</button>
-      <button className="big-button" onClick={() => handleButtonClick('https://www.example1.com')}>Button 3</button>
+      <button className="big-button" onClick={() => handleButtonClick('https://ria.ru/')}>ria.ru</button>
+      <button className="big-button" onClick={() => handleButtonClick('https://www.rbc.ru/')}>rbc.ru</button>
     </div>
   );
 };

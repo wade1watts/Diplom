@@ -48,7 +48,7 @@ class App extends React.Component {
       <Router>
       <Navbar />
       <Routes>
-        <Route exact path='/map' element={<Map />} />
+        <Route exact path='/' element={<Map />} />
         <Route exact path='/source' element={<Source />} />
       </Routes>
       </Router>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"; 
-// import Sidebar from "../sidebar";
 import { MapContainer, Marker, Popup, TileLayer, ZoomControl} from 'react-leaflet';
 import L from "leaflet";
 import '../Map.css'
@@ -35,10 +34,6 @@ function Map() {
     }
             return(
                 <div>
-
-                   
-
-                    {/* <Sidebar/> */}
                 <MapContainer center={[55.74,  37.61]} zoom={8} zoomControl={false} >
 
                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
@@ -50,14 +45,12 @@ function Map() {
                             <Marker position={[pars.latitude, pars.longitude]} icon={markerIcon}>
                                  
                                 <Popup>
-                                <b>Населенный пункт: {[pars.city]}</b><br/> <b>Широта: {[pars.latitude]}</b><br/> <b>Долгота: {[pars.longitude]}</b> <br/> 
+                                <b>Населенный пункт: {[pars.city]}</b><br/>
+                                <b>Широта: {[pars.latitude]}</b><br/> 
+                                <b>Долгота: {[pars.longitude]}</b> <br/> 
                                 <div>
                                 {pars.mil_image_url && <img className="mil_img" src={pars.mil_image_url}  alt="Изображение" />}
                                 </div>
-                                
-                                {/* <button onClick={() => setModalActive([true, pars.latitude, pars.longitude, pars.id])}>Открыть</button>
-                                <button onClick={()=> fetchById(pars.id)}>GET COORDS</button> */}
-                                {/* <div><AddDataForm/></div> */}
                                 </Popup>
                                  
                             </Marker>                                                 
